@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="validHtmlForm.css">
+    <script>
+        const text = document.getElementById('#text');
+        const text_error = document.querySelector('.text-error');
+        text.addEventListener('input',function(){
+            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+            if(nameRegex.test(text.value))
+                text_error.textContent=" ";
+            else text_error.textContent = "name is incorrect";
+        });  
+    </script>
+</head>
+<body>
+    <form class="formClass">
+        <header class="headContainer"><h1>HTML5 form elements</h1></header>
+        <div>
+            <label for="firstName">First Name :</label>
+            <input type="text" id="firstName" name="fName">
+            <error-output for="firstName" class="text-error"></error-output>
+        </div>
+        <div>
+            <label for="lastName">Last Name :</label>
+            <input type="text" id="lastName" name="lName">
+            <error-output for="lastName"></error-output>
+        </div>
+        <div>
+            <label for="password">password :</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="email">email :</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="blURL">First Name :</label>
+            <input type="text" id="blURL" name="blURL">
+        </div>
+        <div>
+            <label for="tel">First Name :</label>
+            <input type="tel" id="tel" name="tel">
+        </div>
+        <div>
+            <label for="hobbies">Hobbies :</label><br>
+            <input type="checkbox" name="checkbox" id="cricket">
+            <label for="cricket">Cricket</label><br>
+            <input type="checkbox" name="checkbox1" id="video-games">
+            <label for="cricket">VideoGames</label>
+        </div>
+        <div>
+            <label for="id-number">Id-Number :</label>
+            <input type="number" id="id-number" name="id-number">
+        </div>
+        <div>
+            <label for="search">Search Employee :</label>
+            <input type="search" id="search" name="employee">
+        </div>
+        <div>
+            <label for="date">Choose date and time :</label>
+            <input type="datetime-local" id="date" name="datePicker">
+        </div>
+        <div>
+            <label for="salary">Salry :</label>
+            <input type="range" id="salary" name="salary" min="300000" max="500000" step="100">
+            <output for="salary">400000</output>
+        </div>
+        <div>
+            <input type="submit" value="submit" name="submit">
+        </div>
+    </form>
+</body>
+</html>
